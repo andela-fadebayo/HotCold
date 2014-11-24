@@ -1,0 +1,67 @@
+/*CSS styles for Hot or Cold JavaScript Andela project 3
+21-24th November, 2014
+Fiyinfoluwa Adebayo*/
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #666;
+    font-family: kalinga, 'sans serif';
+
+}
+
+#container {
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 50%;
+    height: 50%;
+    border: 1px solid #000;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 1em;
+    box-shadow: 0 0 .3em .3em #fff;
+}
+
+#header {
+    padding: 0 5% 0 5%;
+    color: maroon;
+}
+
+#header h1 {
+    margin: 0;
+    padding: 10px 0;
+}
+
+#guessApp {
+    padding: 0 10px;
+    background-color: #fff;
+}
+
+.userInput {
+  height: 30px;
+  width: 100px;
+  outline: none;
+  border-radius: .5em;
+  border: 1px solid purple;
+  color: maroon;
+  font-size: 1em;
+  text-align: center;
+}
+
+.userInput:focus {
+  background-color: #CBBED9;
+  color: maroon;
+}
+
+footer {
+    /*background-color: #ddd;*/
+    padding: 0 10px;#
+    bottom: 0;
+    border-bottom: 1em;
+}
+
+footer p {
+    margin: 0;
+    padding: 5px 0;
+}
