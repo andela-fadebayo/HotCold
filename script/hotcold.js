@@ -20,13 +20,19 @@ var restart = function() {
 //function to display progress status and final result
 var showResult = function(status) {
     var result = document.getElementById('showResult');
-    result.innerHTML = "<span>" + status + "!</span>";
+    result.innerHTML = "<span>" + status + "</span>";
 }
 
 //function to reset the game
 var newGame = function() {
     alert(computerGuess);
     gameApp(computerGuess);
+}
+
+//function to run progress bar
+var progress = function (percent, $element) {
+    var progressBarWidth = percent * $element.width() / 100;
+    $element.find('div').animate({ width: progressBarWidth }, 500).html(percent + "%&nbsp;");
 }
 
 //Hot or Cold game application function
@@ -55,23 +61,23 @@ var gameApp = function(guess) {
         else {
             //find difference between the user's guess and the computer's guess
             newDifference = Math.abs(userInput - guess);
-            if(newDifference < oldDifference) {
+            if (newDifference < oldDifference) {
                 //if the new difference is smaller, that means the user is getting
                 //closer to the computer's guess. 
-                showResult('You are getting <em>hotter</em>');
+                showResult('You are getting <em>hotter!</em>');
             } 
-            else if(newDifference > oldDifference) {
+            else if (newDifference > oldDifference) {
                 //if the new difference is larger, that means the user is getting
                 //farther away from the computer's guess. 
-                showResult('You are getting <em>colder</em>');
+                showResult('You are getting <em>colder!</em>');
             }
-            else if(newDifference == oldDifference) {
+            else if (newDifference == oldDifference) {
                 //if the differences are the same, the user is neither hot or cold.
-                showResult('You are neither <strong>hot</strong> or <strong>cold</strong>');
+                showResult('You are neither <strong>hot</strong> or <strong>cold</strong>!');
             }
-            else{
+            else {
                 //An error must have occured if this else block runs.
-                showResult('An Error has occurred. Please click <em>New Game</em> to restart');
+                showResult('An Error has occurred. Please click <em>New Game</em> to restart.');
             }
             oldDifference = newDifference;
         }
