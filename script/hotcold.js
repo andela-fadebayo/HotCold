@@ -8,60 +8,70 @@ var submitBtn = document.getElementsByTagName('button')[0];
 var newGameBtn = document.getElementsByTagName('button')[1];
 var userInputElement = document.getElementsByTagName('input')[0];
 var computerGuess = Math.round(Math.random() * 100);
-var resultDiv = document.getElementById('showResult');
 
 //define all the functons to be called
+//function to restart the game after finish playing
 var restart = function() {
     alert('Game Restarted');
     computerGuess = Math.round(Math.random() * 100);
     alert(computerGuess); //remove this alert!
 }
 
-var appendChildToDiv = function(string) {
-    // var currentDiv = document.getElementsById('container');
-    // document.body.insertAfter(newDiv,currentDiv)
-    var result = '<span>'+ string + '</span>';
-    //add this to the dom element
+//function to display progress status and final result
+var showResult = function(status) {
+    var result = document.getElementById('showResult');
+    result.innerHTML = "<span>" + status + "!</span>";
 }
+
+//function to reset the game
 var newGame = function() {
     alert(computerGuess);
     gameApp(computerGuess);
 }
+
+//Hot or Cold game application function
 var gameApp = function(guess) {
     var userInput = userInputElement.value;
     //clear user input field
     userInputElement.value = '';
-    if(isNaN(userInput) || userInput > 100 ) {
-        //output on the screen to enter a valid input.
-        console.log('please enter a valid input');
+    //validate user input
+    if(isNaN(userInput) || userInput > 100 || userInput < 0) {
+        showResult('Please enter a <strong>valid</strong> input')
     } 
     else {
         if(guess == userInput){
-            alert('You guessed it!!!');
+            showResult('You guessed it!!! Random Number is ' + computerGuess);
+            //ask to play new game
                 var playNewGame = prompt('Play a New Game? Enter Yes/No').toUpperCase();
-                if(playNewGame == 'Yes') {
+                if(playNewGame == 'YES') {
                     //reload page and start the game again.
                     restart();
                 }
                 else {
-                    alert('Had fun with you... Bye!!!');
+                    //display farewell message
+                    showResult('I Had fun with you... <em>Bye!!!</em>');
                 }
         }
         else {
+            //find difference between the user's guess and the computer's guess
             newDifference = Math.abs(userInput - guess);
-            if(newDifference < oldDifference){
-                alert('you are getting Hotter');
-                appendChildToDiv('you are getting Hotter');
+            if(newDifference < oldDifference) {
+                //if the new difference is smaller, that means the user is getting
+                //closer to the computer's guess. 
+                showResult('You are getting <em>hotter</em>');
             } 
             else if(newDifference > oldDifference) {
-                alert('you are getting Colder');
-                appendChildToDiv('you are getting Colder');
+                //if the new difference is larger, that means the user is getting
+                //farther away from the computer's guess. 
+                showResult('You are getting <em>colder</em>');
             }
             else if(newDifference == oldDifference) {
-                alert('you are neither Hot or Cold');
+                //if the differences are the same, the user is neither hot or cold.
+                showResult('You are neither <strong>hot</strong> or <strong>cold</strong>');
             }
             else{
-                alert('An Error occured');
+                //An error must have occured if this else block runs.
+                showResult('An Error has occurred. Please click <em>New Game</em> to restart');
             }
             oldDifference = newDifference;
         }
