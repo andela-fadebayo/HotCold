@@ -14,7 +14,6 @@ var computerGuess = Math.round(Math.random() * 100);
 var restart = function() {
     alert('Game Restarted');
     computerGuess = Math.round(Math.random() * 100);
-    alert(computerGuess); //remove this alert!
 }
 
 //function to display progress status and final result
@@ -25,7 +24,6 @@ var showResult = function(status) {
 
 //function to reset the game
 var newGame = function() {
-    alert(computerGuess);
     gameApp(computerGuess);
 }
 
