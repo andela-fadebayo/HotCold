@@ -6,9 +6,8 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    /*background-color: #666;*/
     font-family: kalinga, 'sans serif';
-    background-image: url('../images/binary_bkgrnd.jpg');
+    background-image: url('../images/grey_bkgrnd.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -73,12 +72,11 @@ body {
   border: 1px outset #b37d00;
   color: #fff;
   background-color: #A71CB8;
-  /*font-family: */
   font-size: 1.2em;
   text-decoration: none;
   -webkit-box-shadow: 0px 9px 0px #A71CB8, 0px 9px 25px #A71CB8;
-  /*-moz-box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);*/
-  /*box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);*/
+  -moz-box-shadow: 0px 9px 0px #A71CB8, 0px 9px 25px #A71CB8;
+  box-shadow: 0px 9px 0px #A71CB8, 0px 9px 25px #A71CB8;
   -webkit-transition: all .1s ease;
   -moz-transition: all .1s ease;
   -ms-transition: all .1s ease;
@@ -89,8 +87,8 @@ body {
 
 #firstBtn:active, #secondBtn:active {
   -webkit-box-shadow: 0px 3px 0px #B666BF, 0px 3px 6px #B666BF;
-  /*-moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);*/
-  /*box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);*/
+  -moz-box-shadow: 0px 3px 0px #B666BF, 0px 3px 6px #B666BF;
+  box-shadow: 0px 3px 0px #B666BF, 0px 3px 6px #B666BF;
   position: relative;
   top: 6px;
   outline: 0;
@@ -108,7 +106,6 @@ body {
 
 #showResult {
   margin: 40px auto;
-  /*border: 1px solid #CBBED9;*/
 }
 
 #progressBar {
@@ -116,7 +113,7 @@ body {
   width: 400px;
   height: 10px;
   border: 1px solid #111;
-  background-color: #292929;
+  background-color: maroon;
 }
 
 #progressBar div {
@@ -125,11 +122,10 @@ body {
   text-align: right;
   height: 20px;
   width: 0;
-  background-color: maroon;
+  background-color: #ccc;
 }
 
 footer {
-    /*background-color: #ddd;*/
     padding: 0 10px;
     bottom: 0;
     border-bottom: 1em;

@@ -2,18 +2,19 @@
 // Fiyinfoluwa Adebayo
 // 21-24th November, 2014
 
-//hot or cold app realized using object literals
+//Hot or Cold App realized using object literals
 
 var HotCold = {
   //define all variables
   oldDifference: 0,
+  userInputProgress: 0,
   submitBtn: document.getElementsByTagName('button')[0],
   newGameBtn: document.getElementsByTagName('button')[1],
   userInputElement: document.getElementsByTagName('input')[0],
   computerGuess: Math.round(Math.random() * 100),
   newGame: function() {
              HotCold.gameApp(HotCold.computerGuess);
-             console.log("computer generated guess is " + HotCold.computerGuess);
+             HotCold.progressBar(HotCold.computerGuess, HotCold.userInputProgress);
           },
   showResult: function(status) {
                 var result = document.getElementById('showResult');
@@ -26,13 +27,12 @@ var HotCold = {
            },
   gameApp: function(guess) {
              var userInput = HotCold.userInputElement.value;
-             console.log("user input was " + userInput);
+             HotCold.userInputProgress = userInput;
              //clear user input field
              HotCold.userInputElement.value = '';
              //validate user input
              if(isNaN(userInput) || userInput > 100 || userInput < 0) {
                HotCold.showResult('Please enter a <strong>valid</strong> input. See instructions above.');
-               console.log('Please enter a valid input!!!');
              }
              else {
                if(guess == userInput){
@@ -51,9 +51,7 @@ var HotCold = {
                else {
                  //find difference between the user's guess and the computer's guess
                  var newDifference = Math.abs(userInput - guess);
-                 console.log('new difference is ' + newDifference);
-                 var oldDifference = HotCold.oldDifference;
-                 console.log('old difference is ' + oldDifference);
+                 oldDifference = HotCold.oldDifference;
                  if (newDifference < oldDifference) {
                    //if the new difference is smaller, that means the user is getting
                    //closer to the computer's guess. 
@@ -75,7 +73,12 @@ var HotCold = {
                  HotCold.oldDifference = newDifference;
                }
              }
-           }
+           },
+  progressBar: function(computerChoice, userInput) {
+                 //function to animate progress based on user inputs
+                 var percent = Math.abs(100 - (Math.floor(Math.abs(computerChoice - userInput))));
+                 $('#progressBar').animate({width:percent + "%"}, 500);
+               }
   
 };
 
