@@ -1,0 +1,138 @@
+/*CSS styles for Hot or Cold JavaScript Andela project 3
+21-24th November, 2014
+Fiyinfoluwa Adebayo*/
+
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: kalinga, 'sans serif';
+    background-image: url('../images/grey_bkgrnd.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+#container {
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 50%;
+    height: 50%;
+    border: 1px solid #000;
+    text-align: center;
+    background-color: #F0CBFF;
+    border-radius: 1em;
+    box-shadow: 0 0 .3em .3em #fff;
+}
+
+#header {
+    padding: 0 5% 0 5%;
+    color: maroon;
+}
+
+#header h1 {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.instruction {
+  font-size: .802em;
+}
+
+#guessApp {
+    padding: 0 10px;
+    background-color: #F0CBFF;
+}
+
+.userInput {
+  height: 30px;
+  width: 200px;
+  outline: none;
+  border-radius: .5em;
+  border: 1px solid purple;
+  color: maroon;
+  font-size: 1em;
+  text-align: center;
+}
+
+.userInput:focus {
+  background-color: #F7D9FB;
+  color: maroon;
+}
+
+#firstBtn, #secondBtn {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  padding: 10px;
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+  border: 1px outset #b37d00;
+  color: #fff;
+  background-color: #A71CB8;
+  font-size: 1.2em;
+  text-decoration: none;
+  -webkit-box-shadow: 0px 9px 0px #A71CB8, 0px 9px 25px #A71CB8;
+  -moz-box-shadow: 0px 9px 0px #A71CB8, 0px 9px 25px #A71CB8;
+  box-shadow: 0px 9px 0px #A71CB8, 0px 9px 25px #A71CB8;
+  -webkit-transition: all .1s ease;
+  -moz-transition: all .1s ease;
+  -ms-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease;
+  outline: 0;
+}
+
+#firstBtn:active, #secondBtn:active {
+  -webkit-box-shadow: 0px 3px 0px #B666BF, 0px 3px 6px #B666BF;
+  -moz-box-shadow: 0px 3px 0px #B666BF, 0px 3px 6px #B666BF;
+  box-shadow: 0px 3px 0px #B666BF, 0px 3px 6px #B666BF;
+  position: relative;
+  top: 6px;
+  outline: 0;
+}
+
+#firstBtn:hover, #secondBtn:hover {
+  background-color: #B666BF;
+  outline: 0;
+}
+
+#secondBtn {
+  width: 200px;
+  margin-left: 20px;
+}
+
+#showResult {
+  margin: 40px auto;
+}
+
+#progressBar {
+  margin: 30px auto;
+  width: 400px;
+  height: 10px;
+  border: 1px solid #111;
+  background-color: maroon;
+}
+
+#progressBar div {
+  height: 100%;
+  color: #fff;
+  text-align: right;
+  height: 20px;
+  width: 0;
+  background-color: #ccc;
+}
+
+footer {
+    padding: 0 10px;
+    bottom: 0;
+    border-bottom: 1em;
+    font-size: .854em;
+}
+
+footer p {
+    margin: 0;
+    padding: 5px 0;
+}
