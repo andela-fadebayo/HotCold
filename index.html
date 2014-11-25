@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="shortcut icon" href="images/hotcold_icon.jpg" />
     <title>Hot or Cold | Fiyin Adebayo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width initial-scale=1" />
@@ -12,6 +13,9 @@
     <div id='container'>
         <div id="header">
             <h1>Are you Hot or Cold?</h1>
+            <p class="instruction">
+              How smart are you? Challenge me and guess what I'm thinking. Pick a number between 0 and 100!
+            </p>
         </div>
         <div id='guessApp'>
             <input type="text" name="userInput" placeholder='Enter a value' class="userInput"><br /><br />
@@ -30,9 +34,5 @@
     </div>
 </body>
 <script type="text/javascript" src="script/jquery-1.11.1.js"></script>
-<script src="script/hotcold.js"></script>
-<script>
-progressBar(75, $('#progressBar'));
-</script>
-<!-- <script src="script/hotcold_olp.js"></script> -->
+<script src="script/hotcold_olp.js"></script>
 </html>

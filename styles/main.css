@@ -37,6 +37,10 @@ body {
     padding: 10px 0;
 }
 
+.instruction {
+  font-size: .802em;
+}
+
 #guessApp {
     padding: 0 10px;
     background-color: #F0CBFF;
@@ -109,8 +113,8 @@ body {
 
 #progressBar {
   margin: 30px auto;
-  width: 300px;
-  height: 20px;
+  width: 400px;
+  height: 10px;
   border: 1px solid #111;
   background-color: #292929;
 }
