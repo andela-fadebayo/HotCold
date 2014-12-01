@@ -14,7 +14,7 @@ var HotCold = {
   computerGuess: Math.round(Math.random() * 100),
   newGame: function() {
              HotCold.gameApp(HotCold.computerGuess);
-             HotCold.progressBar(HotCold.computerGuess, HotCold.userInputProgress);
+             HotCold.progressBar(100, HotCold.userInputProgress, HotCold.computerGuess);
           },
   showResult: function(status) {
                 var result = document.getElementById('showResult');
@@ -24,6 +24,7 @@ var HotCold = {
              alert('Game Restarted');
              HotCold.showResult('Game Restarted...<em>goodluck!!!</em>')
              HotCold.computerGuess = Math.round(Math.random() * 100);
+             $("#sliderBar").animate({width: "0%"});
            },
   gameApp: function(guess) {
              var userInput = HotCold.userInputElement.value;
@@ -31,7 +32,7 @@ var HotCold = {
              //clear user input field
              HotCold.userInputElement.value = '';
              //validate user input
-             if(isNaN(userInput) || userInput > 100 || userInput < 0) {
+             if(isNaN(userInput) || userInput > 100 || userInput < 0 || userInput === "") {
                HotCold.showResult('Please enter a <strong>valid</strong> input. See instructions above.');
              }
              else {
@@ -39,7 +40,11 @@ var HotCold = {
                  HotCold.showResult('You guessed it!!! Random Number is ' + HotCold.computerGuess);
                  //ask to play new game
                  var playNewGame = prompt('Play a New Game? Enter Yes/No').toUpperCase();
-                 if(playNewGame == 'YES') {
+                 if (playNewGame === "") {
+                  alert("Please answer YES or NO");
+                  playNewGame = prompt("Play a New Game? Enter Yes/No").toUpperCase();
+                 }
+                 else if(playNewGame === 'YES') {
                    //reload page and start the game again.
                    HotCold.restart();
                  }
@@ -74,10 +79,17 @@ var HotCold = {
                }
              }
            },
-  progressBar: function(computerChoice, userInput) {
+  progressBar: function(fullWidth, userInput, computerChoice) {
+                 var percent;
                  //function to animate progress based on user inputs
-                 var percent = Math.abs(100 - (Math.floor(Math.abs(computerChoice - userInput))));
-                 $('#progressBar').animate({width:percent + "%"}, 500);
+                 if (userInput > 100 || userInput < 0 || userInput === "" || isNaN(userInput)) {
+                  percent = 0;
+                 }
+                 else {
+                   percent = Math.abs(100 - (Math.floor(Math.abs(computerChoice - userInput))));
+                   // document.getElementById("sliderBar").style.width=percent+'%';
+                   $("#sliderBar").animate({width: percent + "%"});
+                 }
                }
   
 };
